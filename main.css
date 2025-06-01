@@ -1,0 +1,155 @@
+.hero {
+background-color: #e7f5ec;
+padding: 80px 20px 40px;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 3rem;
+color: #00c6b7;
+}
+
+.hero p {
+font-size: 1.2rem;
+max-width: 700px;
+margin: 20px auto;
+color: #333;
+}
+
+/* TECH CARDS SECTION */
+.tech-cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+padding: 40px 20px;
+background-color: #f4f4f4;
+}
+
+.tech-card {
+background-color: white;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+width: 350px;
+text-align: center;
+overflow: hidden;
+transition: transform 0.3s;
+}
+
+.tech-card img {
+width: 100%;
+height: 180px;
+object-fit: cover;
+}
+
+.tech-card h3 {
+font-size: 1.4rem;
+margin: 15px 0 10px;
+color: #00c6b7;
+}
+
+.tech-card p {
+font-size: 0.95rem;
+padding: 0 15px 20px;
+color: #555;
+}
+
+.tech-card a {
+display: inline-block;
+margin-bottom: 20px;
+padding: 8px 16px;
+background-color: #000000;
+color: white;
+text-decoration: none;
+border-radius: 18px;
+font-size: 0.9rem;
+}
+
+a:hover {
+color: #00c6b7;
+background-color: #e7f5ec;
+}
+
+/* EXTRA SECTIONS */
+.extra-section {
+background-color: white;
+max-width: 80%;
+margin: 40px auto;
+padding: 30px 20px;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.extra-section h2 {
+color: #00c6b7;
+margin-bottom: 15px;
+text-align: center;
+}
+
+.extra-section p {
+color: #444;
+line-height: 1.6;
+font-size: 1rem;
+max-width: 700px;
+margin: 0 auto 20px auto;
+text-align: center;
+}
+
+.extra-section img {
+display: block;
+max-width: 100%;
+margin: 0 auto 20px;
+border-radius: 12px;
+}
+
+.extra-section ul {
+max-width: 700px;
+margin: 0 auto;
+padding-left: 20px;
+color: #444;
+font-size: 1rem;
+line-height: 1.5;
+}
+
+/* FLEX SPLIT SECTION */
+.flex-split {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+gap: 30px;
+}
+
+.flex-split .text {
+flex: 1 1 50%;
+min-width: 300px;
+}
+
+.flex-split .image {
+flex: 1 1 40%;
+min-width: 250px;
+}
+
+.flex-split .image img {
+width: 100%;
+height: auto;
+border-radius: 12px;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+.tech-cards {
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-split {
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex-split .text,
+.flex-split .image {
+    flex: 1 1 100%;
+}
+}

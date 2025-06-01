@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green Energy | Greenix</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #222;
+}
+
+header {
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo-icon {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: monospace;
+    margin-right: 10px;
+}
+
+.logo-text {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: auto;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #00c6b7;
+    border-bottom: 2px solid #00c6b7;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    min-width: 180px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+main {
+    padding-top: 100px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    color: #00c6b7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.side-by-side img {
+    flex: 1 1 45%;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.side-by-side div {
+    flex: 1 1 50%;
+}
+
+.stacked img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+h2 {
+    color: #00c6b7;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+}
+
+  /* Responsive styles */
+@media (max-width: 768px) {
+    .menu-icon {
+    display: block;
+    }
+
+    .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    display: none;
+    border-top: 1px solid #ccc;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+    }
+
+    .nav-links a,
+    .dropbtn {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    width: 100%;
+    padding-left: 15px;
+    }
+
+    .dropdown-content a {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    .side-by-side {
+    flex-direction: column;
+    }
+
+    .side-by-side img,
+    .side-by-side div {
+    flex: 1 1 100%;
+    }
+
+    main {
+    padding-top: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html" class="logo-icon">GN</a>
+<a href="index.html" class="logo-text">Greenix</a>
+
+<input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="menu-icon"><i class="bi bi-list"></i></label>
+
+<nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About us.html">About Us</a>
+    <div class="dropdown">
+    <a href="Main page.html" class="active" class="dropbtn">How Tech Helps <i class="bi bi-caret-down-fill"></i></a>
+    <div class="dropdown-content">
+        <a href="green-energy.html" class="active">Green Energy</a>
+        <a href="smart-living.html">Smart Living</a>
+        <a href="wastewise.html">Waste Wise</a>
+    </div>
+    </div>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html">FAQ</a>
+</nav>
+</header>
+
+<main>
+<h1>Green Energy</h1>
+
+<div class="side-by-side">
+    <img src="Images/How-solar-energy-is-created.webp" alt="Solar Panel Rooftop" />
+    <div>
+    <h2>What is Green Energy?</h2>
+    <p>Green energy is a type of energy that comes from natural sources that are constantly renewed, such as sunlight, wind, water, and heat from the Earth. Unlike fossil fuels like coal, oil, and gas, green energy sources do not pollute the air or harm the environment. They produce little or no greenhouse gases, which helps fight climate change and protect the planet. Common types of green energy include solar power, wind power, hydropower, geothermal energy, and biomass. Using green energy is important because it provides a cleaner, safer, and more sustainable way to meet our energy needs today and in the future.</p>
+    </div>
+</div>
+
+<div class="stacked">
+    <img src="Images/solution_onshorewindturbines01.jpg" alt="Wind Farm" />
+    <p>Wind turbines generate electricity using wind power. Countries like Denmark get over 40% of their electricity from wind. Wind farms are expanding worldwide to help move away from fossil fuels.</p>
+</div>
+
+<div class="side-by-side">
+    <img src="Images/01_hydropower_nationalgeographic_2432630.avif" alt="Hydropower Dam" />
+    <div>
+    <h2>Hydropower</h2>
+    <p>Hydropower is a form of green energy that uses the movement of water to generate electricity. It works by capturing the energy from flowing rivers or falling water, usually through dams or turbines. As water moves, it spins turbines connected to generators, producing clean and renewable electricity. Hydropower is one of the oldest and most reliable sources of renewable energy. It does not produce air pollution or greenhouse gases, making it good for the environment. Additionally, hydropower plants can provide a steady and consistent supply of electricity, helping to meet the energy needs of communities in a sustainable way.</p>
+    </div>
+</div>
+
+<div class="stacked">
+    <img src="Images/TRF_CLB_COMSOLAR_004+resize.jpg" alt="Solar Community Project" />
+    <p>Solar energy is widely used in homes, schools, and communities because it is clean and renewable. In Myanmar, many remote villages that do not have access to the main power grid are installing small solar grids to bring electricity to their homes. These solar projects are making a big difference by providing light for studying at night, powering schools, and helping local businesses grow. By using solar energy, these villages are improving education, boosting the economy, and creating better living conditions for the people.
+</p>
+</div>
+
+<div class="side-by-side">
+    <img src="Images/powering-community-solar-esasolar.jpg" alt="Benefits of Green Energy" />
+    <div>
+    <h2>Why Green Energy Matters</h2>
+    <p>Green energy matters because it helps protect our planet and ensures a healthier future for everyone. Unlike traditional energy sources like coal and oil, green energy produces little or no pollution, which reduces harmful greenhouse gases that cause climate change. It also helps conserve natural resources by using renewable sources like the sun, wind, and water that will never run out. Using green energy improves air quality, reduces health problems caused by pollution, and supports sustainable economic growth. Overall, green energy is important because it provides clean, safe, and reliable power while helping to protect the environment for future generations.</p>
+    </div>
+</div>
+
+<div class="stacked">
+    <img src="Images/renewable energies.jpg" alt="renewable energy" />
+</div>
+</main>
+<footer>
+  <div class="aurora-container">
+    <div class="forest-chamber">
+      <h2 class="greenix-title">About Greenix</h2>
+      <p class="greenix-text">Greenix is a student-led project exploring technology for sustainable lifestyles. Our mission is to inspire and educate for a greener future.</p>
+    </div>
+
+        <div class="river-links">
+      <h2 class="greenix-title">Quick Links</h2>
+      <ul>
+        <li><a class="greenix-link" href="index.html">Home</a></li>
+        <li><a class="greenix-link" href="About us.html">About Us</a></li>
+        <li><a class="greenix-link" href="Main page.html">How Tech Helps</a></li>
+        <li><a class="greenix-link" href="contact.html">Contact</a></li>
+        <li><a class="greenix-link" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="meadow-resources">
+      <h2 class="greenix-title">Resources</h2>
+      <ul>
+        <li><a class="greenix-link" href="https://docs.google.com/document/d/1abcXYZ" target="_blank" rel="noopener noreferrer">References (Google Doc)</a></li>
+        <li class="greenix-text">Email: <a class="greenix-link" href="mailto:greenixproject@gmail.com">greenixproject@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="twilight-bottom">
+    &copy; 2025 Greenix. All rights reserved.
+  </div>
+
+  <style>
+    footer {
+      background-color: #000; /* true black */
+      color: white;
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aurora-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .forest-chamber,
+    .river-links,
+    .meadow-resources {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .greenix-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .greenix-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .greenix-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .twilight-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      border-top: 1px solid #ffffff;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .aurora-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .forest-chamber,
+      .river-links,
+      .meadow-resources {
+        min-width: 100%;
+      }
+    }
+  </style>
+</footer>
+</body>
+</html>

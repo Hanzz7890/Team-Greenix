@@ -1,0 +1,95 @@
+    /*Heading*/
+
+    .ul_dash {
+        list-style: armenian;
+    }
+
+    /*Main Content*/
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    
+    .contact-form {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-form label {
+        font-weight: 500;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        border: 2px solid #3f3f3f;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 14px;
+        resize: none;
+    }
+    
+    .contact-form textarea {
+        height: 150px;
+    }
+    
+    .contact-form button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: 2px solid #000;
+        border-radius: 20px;
+        background-color: white;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .contact-form button:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .material-icons {
+        font-size: 18px;
+    }
+    
+    .contact-info {
+        flex: 1;
+        min-width: 250px;
+        border: 2px solid #000;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    .contact-info h3 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+    
+    .contact-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        font-size: 20px;
+        color: #000;
+        text-decoration: none;
+    }
+    
+    .social-icons img{
+        width: 50px;
+        height: 50px;
+    }

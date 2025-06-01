@@ -1,0 +1,35 @@
+.section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    }
+    .side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+    }
+    .side-by-side img {
+    flex: 1 1 45%;
+    width: 100%;
+    border-radius: 12px;
+    }
+    .side-by-side div {
+    flex: 1 1 50%;
+    }
+    .stacked img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 20px;
+    }
+    h2 {
+    color: #00c6b7;
+    }
+    p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    }

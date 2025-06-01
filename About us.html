@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Greenix</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="icon" type="image/png" sizes="64x64" href="Images/dicky.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      padding-top: 70px;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo-icon {
+      background: #000;
+      color: #fff;
+      padding: 4px 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 22px;
+      font-family: monospace;
+      margin-right: 10px;
+    }
+
+    .logo-text {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      margin-right: auto;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #00c6b7;
+      border-bottom: 2px solid #00c6b7;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 10px 0;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      min-width: 180px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        display: none;
+        border-top: 1px solid #ccc;
+      }
+
+      #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+      }
+
+      .nav-links a,
+      .dropbtn {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f9f9f9;
+        width: 100%;
+        padding-left: 15px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        padding: 10px 10px;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 20px;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 992px) {
+      .team {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .member-card {
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .member-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-bottom: 4px solid #3498db;
+    }
+
+    .member-info {
+      padding: 1.5rem 1rem 2rem 1rem;
+    }
+
+    .member-name {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #2c3e50;
+      margin-bottom: 0.3rem;
+    }
+
+    .highlight-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: white;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+      border-radius: 14px;
+      padding: 2rem;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-photo {
+      flex: 1 1 300px;
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 250px;
+      width: 100%;
+    }
+
+    .highlight-content {
+      flex: 2 1 400px;
+    }
+
+    .highlight-content h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .highlight-content p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .highlight-section {
+        flex-direction: column;
+      }
+
+      .highlight-photo {
+        max-width: 100%;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .highlight-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .highlight-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-icon">GN</a>
+    <a href="index.html" class="logo-text">Greenix</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="bi bi-list"></i></label>
+
+    <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About us.html" class="active">About Us</a>
+    <div class="dropdown">
+        <a href="Main page.html"  class="dropbtn">How Tech Helps <i class="bi bi-caret-down-fill"></i></a>
+        <div class="dropdown-content">
+        <a href="green-energy.html">Green Energy</a>
+        <a href="smart-living.html">Smart Living</a>
+        <a href="wastewise.html">Waste Wise</a>
+        </div>
+    </div>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+
+<div class="container">
+  <section class="team" aria-label="Team members">
+    <div class="member-card">
+      <img class="member-photo" src="Images/Kyaw Myint Myat Hein.jpg" alt="Photo of Kyaw Myint Myat Hein" />
+      <div class="member-info">
+        <div class="member-name">Kyaw Myint Myat Hein</div>
+      </div>
+    </div>
+    <div class="member-card">
+      <img class="member-photo" src="Images/BHone Pyae Maung.jpg" alt="Photo of Bhone Pyae Maung" />
+      <div class="member-info">
+        <div class="member-name">Bhone Pyae Maung</div>
+      </div>
+    </div>
+    <div class="member-card">
+      <img class="member-photo" src="Images/Thuta Min Sitt.jpg" alt="Photo of Thuta Min Sitt" />
+      <div class="member-info">
+        <div class="member-name">Thuta Min Sitt</div>
+      </div>
+    </div>
+    <div class="member-card">
+      <img class="member-photo" src="Images/Screenshot 2025-05-29 120301 (1).png" alt="Photo of Oak Soe Han" />
+      <div class="member-info">
+        <div class="member-name">Oak Soe Han</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section" aria-labelledby="highlight-title">
+    <img class="highlight-photo" src="Images/develop-your-team-without-spending-any-money-leadership-coach-in-Chesterfield.png" alt="Our team collaboration" />
+    <div class="highlight-content">
+      <h2 id="highlight-title">Our Commitment to Excellence</h2>
+      <p>
+        We believe in pushing the boundaries of technology and design to deliver exceptional value to our clients and community. Our team thrives on collaboration, diversity, and continuous learning to ensure every project we undertake achieves greatness.
+      </p>
+    </div>
+  </section>
+
+  <!-- New Sections -->
+  <section class="highlight-section">
+    <div class="highlight-content">
+      <h2>Why We Chose This Topic</h2>
+      <p>
+        We chose the topic of sustainable technology because we are passionate about protecting the environment and creating a better future. With the growing impact of climate change, it is important to explore how technology can help solve real-world problems like pollution, waste, and energy use.
+      </p>
+    </div>
+  </section>
+
+  <section class="highlight-section">
+    <div class="highlight-content">
+      <h2>Purpose of This Website</h2>
+      <p>
+        The purpose of this website is to educate and inspire people especially students and families about the role of technology in sustainable living. We want to share useful information, examples, and tips to help others understand how tech can lead to greener choices and a healthier planet.
+      </p>
+    </div>
+  </section>
+
+  <section class="highlight-section">
+    <div class="highlight-content">
+      <h2>Who Are We?</h2>
+      <p>
+        We are a team of students who care about our planet. Through research, teamwork, and creativity, we built this website as part of our project to raise awareness about sustainable lifestyles. Each member brought unique strengths from design and coding to writing and researching to make Greenix a success.
+      </p>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="aurora-container">
+    <div class="forest-chamber">
+      <h2 class="greenix-title">About Greenix</h2>
+      <p class="greenix-text">Greenix is a student-led project exploring technology for sustainable lifestyles. Our mission is to inspire and educate for a greener future.</p>
+    </div>
+
+        <div class="river-links">
+      <h2 class="greenix-title">Quick Links</h2>
+      <ul>
+        <li><a class="greenix-link" href="index.html">Home</a></li>
+        <li><a class="greenix-link" href="About us.html">About Us</a></li>
+        <li><a class="greenix-link" href="Main page.html">How Tech Helps</a></li>
+        <li><a class="greenix-link" href="contact.html">Contact</a></li>
+        <li><a class="greenix-link" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="meadow-resources">
+      <h2 class="greenix-title">Resources</h2>
+      <ul>
+        <li><a class="greenix-link" href="https://docs.google.com/document/d/1abcXYZ" target="_blank" rel="noopener noreferrer">References (Google Doc)</a></li>
+        <li class="greenix-text">Email: <a class="greenix-link" href="mailto:greenixproject@gmail.com">greenixproject@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="twilight-bottom">
+    &copy; 2025 Greenix. All rights reserved.
+  </div>
+
+  <style>
+    footer {
+      background-color: #000; /* true black */
+      color: white;
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aurora-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .forest-chamber,
+    .river-links,
+    .meadow-resources {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .greenix-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .greenix-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .greenix-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .twilight-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      border-top: 1px solid #ffffff;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .aurora-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .forest-chamber,
+      .river-links,
+      .meadow-resources {
+        min-width: 100%;
+      }
+    }
+  </style>
+</footer>
+</body>
+</html>

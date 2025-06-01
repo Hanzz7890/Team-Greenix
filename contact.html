@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="icon" type="image/png" sizes="64x64" href="Images/dicky.png">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #a8edea, #f3eef0);
+    color: #333;
+    }
+
+    header {
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+    }
+
+    .logo-icon {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: monospace;
+    margin-right: 10px;
+    }
+
+    .logo-text {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: auto;
+    }
+
+    #menu-toggle {
+    display: none;
+    }
+
+    .menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    }
+
+    .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    }
+
+    .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+    color: #00c6b7;
+    border-bottom: 2px solid #00c6b7;
+    }
+
+    .dropdown {
+    position: relative;
+    }
+
+    .dropbtn {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    min-width: 180px;
+    }
+
+    .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    }
+
+    .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    @media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        display: none;
+        border-top: 1px solid #ccc;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .nav-links a,
+    .dropbtn {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f9f9f9;
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .dropdown-content a {
+        padding: 10px 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    }
+
+    /* ===== CONTACT PAGE ===== */
+    .contact-section {
+    padding: 120px 20px 50px; /* Add padding-top to avoid overlap from navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    }
+
+    .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 1100px;
+    width: 100%;
+    flex-wrap: wrap;
+    }
+
+    .contact-form,
+    .contact-info {
+    flex: 1;
+    min-width: 300px;
+    }
+
+    .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .contact-form label {
+    font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    }
+
+    .contact-form textarea {
+    resize: vertical;
+    height: 100px;
+    }
+
+    .contact-form button {
+    background: #009688;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    }
+
+    .contact-info h3 {
+    color: #009688;
+    margin-top: 20px;
+    }
+
+    .contact-info p {
+    margin: 5px 0;
+    }
+
+    .social-icons i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #555;
+    cursor: pointer;
+    }
+
+    .social-icons i:hover {
+    color: #009688;
+    }
+    .btn {
+display: inline-block;
+padding: 10px 20px;
+background-color: #009688;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+}
+.btn i {
+margin-right: 5px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-icon">GN</a>
+    <a href="index.html" class="logo-text">Greenix</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="bi bi-list"></i></label>
+
+    <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About us.html">About Us</a>
+    <div class="dropdown">
+        <a href="Main page.html" class="dropbtn">How Tech Helps <i class="bi bi-caret-down-fill"></i></a>
+        <div class="dropdown-content">
+        <a href="green-energy.html">Green Energy</a>
+        <a href="smart-living.html">Smart Living</a>
+        <a href="wastewise.html">Waste Wise</a>
+        </div>
+    </div>
+    <a href="contact.html" class="active">Contact Us</a>
+    <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+
+<section class="contact-section">
+<h1 class="contact-title">Contact</h1>
+
+<div class="container">
+    <form class="contact-form">
+      <label>Your Name *</label>
+    <input type="text" placeholder="Name*" required>
+
+      <label>Email *</label>
+    <input type="email" placeholder="Email*" required>
+
+      <label>Subject *</label>
+    <input type="text" placeholder="Subject*" required>
+      <label>Your Message *</label>
+    <textarea placeholder="Enter here..." required></textarea>
+    <a href="success.html" class="btn"><i class="bi bi-send"></i> Send Message</a>
+    </form>
+
+    <div class="contact-info">
+    <h3>Address</h3>
+    <p>No. 15, Pan Pyin Gyi St., Kyimindaing</p>
+    <p>No. 837, Po Yazar St., Shewpokkan</p>
+
+    <h3>Contact</h3>
+    <p>Phone: 09765618316</p>
+    <p>Email: Greenix342@gmail.com</p>
+    <h3>Stay Connected</h3>
+    <div class="social-icons">
+    <a href="https://www.facebook.com/home.php" target="_blank"><i class="bi bi-facebook"></i></a>
+    <a href="https://telegram.org" target="_blank"><i class="bi bi-telegram"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+    <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
+</div>
+    </div>
+</div>
+</section>
+<footer>
+  <div class="aurora-container">
+    <div class="forest-chamber">
+      <h2 class="greenix-title">About Greenix</h2>
+      <p class="greenix-text">Greenix is a student-led project exploring technology for sustainable lifestyles. Our mission is to inspire and educate for a greener future.</p>
+    </div>
+
+        <div class="river-links">
+      <h2 class="greenix-title">Quick Links</h2>
+      <ul>
+        <li><a class="greenix-link" href="index.html">Home</a></li>
+        <li><a class="greenix-link" href="About us.html">About Us</a></li>
+        <li><a class="greenix-link" href="Main page.html">How Tech Helps</a></li>
+        <li><a class="greenix-link" href="contact.html">Contact</a></li>
+        <li><a class="greenix-link" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="meadow-resources">
+      <h2 class="greenix-title">Resources</h2>
+      <ul>
+        <li><a class="greenix-link" href="https://docs.google.com/document/d/1abcXYZ" target="_blank" rel="noopener noreferrer">References (Google Doc)</a></li>
+        <li class="greenix-text">Email: <a class="greenix-link" href="mailto:greenixproject@gmail.com">greenixproject@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="twilight-bottom">
+    &copy; 2025 Greenix. All rights reserved.
+  </div>
+
+  <style>
+    footer {
+      background-color: #000; /* true black */
+      color: white;
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aurora-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .forest-chamber,
+    .river-links,
+    .meadow-resources {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .greenix-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .greenix-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .greenix-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .twilight-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      border-top: 1px solid #ffffff;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .aurora-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .forest-chamber,
+      .river-links,
+      .meadow-resources {
+        min-width: 100%;
+      }
+    }
+  </style>
+</footer>
+
+</body>
+</html>

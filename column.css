@@ -1,0 +1,191 @@
+.row {
+
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    margin-left: -10px;
+    
+    margin-right: -10px;
+    
+    }
+    
+    [class*="col-"] {
+        
+    padding: 10px;
+        
+    box-sizing: border-box;
+        
+    }
+
+    .col-1 { width: 8.33%; }
+    
+    .col-2 { width: 16.66%; }
+    
+    .col-3 { width: 25%; }
+    
+    .col-4 { width: 33.33%; }
+    
+    .col-5 { width: 41.66%; }
+    
+    .col-6 { width: 50%; }
+    
+    .col-7 { width: 58.33%; }
+    
+    .col-8 { width: 66.66%; }
+    
+    .col-9 { width: 75%; }
+    
+    .col-10 { width: 83.33%; }
+    
+    .col-11 { width: 91.66%; }
+    
+    .col-12 { width: 100%; }
+    
+    @media screen and (max-width: 768px) {
+        
+    .col-s-1, .col-s-2, .col-s-3, .col-s-4, .col-s-5, .col-s-6,
+        
+    .col-s-7, .col-s-8, .col-s-9, .col-s-10, .col-s-11, .col-s-12 {
+        
+        width: 100%;
+        
+    }
+    
+    }
+    
+    body{
+    
+    font-family: 'Arial', sans-serif;
+        
+    background-color: #ffffff;
+        
+    margin: 0;
+        
+    padding: 0;
+        
+    }
+    
+    .container {
+        
+    max-width: 1000px;
+        
+    margin: auto;
+        
+    padding: 20px;
+        
+    }
+    
+    .clean-energy-box {
+        
+    background-color: #f4f9f9;
+        
+    border-radius: 15px;
+        
+    padding: 20px;
+        
+    margin-bottom: 40px;
+        
+    }
+    
+    .clean-energy-box h1 {
+        
+    font-size: 40px;
+        
+    color: #00b5ad;
+        
+    margin: 0;
+        
+    line-height: 1.1;
+        
+    }
+    
+    .description {
+        
+    color: #333;
+        
+    font-size: 16px;
+        
+    } 
+    
+    .benefits h2 {
+    
+    color: #00b5ad;
+        
+    font-size: 28px;
+        
+    margin-bottom: 10px;
+        
+    }
+    
+    .benefits ul {
+        
+    list-style-type: disc;
+        
+    padding-left: 20px;
+        
+    color: #333;
+        
+    font-size: 18px;
+        
+    }
+    
+    .video {
+        
+    text-align: center;
+        
+    }
+    
+    .video p {
+        
+    font-weight: bold;
+        
+    font-size: 18px;
+        
+    margin-bottom: 10px;
+        
+    }
+    
+    .video-placeholder {
+        
+    width: 100%;
+        
+    max-width: 400px;
+        
+    aspect-ratio: 16 / 9;
+        
+    background: #e0e0e0;
+        
+    border: 2px solid #ccc;
+        
+    border-radius: 10px;
+        
+    overflow: hidden;
+        
+    display: flex;
+        
+    align-items: center;
+        
+    justify-content: center;
+        
+    }
+
+    .video-placeholder img {
+        
+    width: 100%;
+        
+    height: auto;
+        
+    object-fit: cover;
+        
+    }
+    
+    @media (max-width: 768px) {
+
+    .clean-energy-box h1 {
+        font-size: 32px;
+}
+    .benefits ul, .video p {
+    font-size: 16px;
+}
+}

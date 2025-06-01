@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How Technology Helps | Greenix</title>
+<link rel="stylesheet" href="column.css" />
+<link rel="stylesheet" href="main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="icon" type="image/png" sizes="64x64" href="Images/dicky.png">
+<style>
+    .hero {
+        background-color: #e7f5ec;
+        padding: 80px 20px 40px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        color: #00c6b7;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 20px auto;
+        color: #333;
+    }
+
+    .tech-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+    }
+
+    .tech-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+
+    .tech-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .tech-card h3 {
+        font-size: 1.4rem;
+        margin: 15px 0 10px;
+        color: #00c6b7;
+    }
+
+    .tech-card p {
+        font-size: 0.95rem;
+        padding: 0 15px 20px;
+        color: #555;
+    }
+
+    .tech-card a {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 8px 16px;
+        background-color:  #00c6b7;
+        color: white;
+        text-decoration: none;
+        border-radius: 18px;
+        font-size: 0.9rem;
+    }
+
+    a:hover {
+        color: #00c6b7;
+        background-color: #e7f5ec;
+    }
+
+    @media (max-width: 768px) {
+        .tech-cards {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .extra-section {
+        background-color: white;
+        max-width: 80%;
+        margin: 40px auto;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .extra-section h2 {
+        color: #00c6b7;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .extra-section p {
+        color: #444;
+        line-height: 1.6;
+        font-size: 1rem;
+        max-width: 700px;
+        margin: 0 auto 20px auto;
+        text-align: center;
+    }
+
+    .extra-section img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto 20px;
+        border-radius: 12px;
+    }
+
+    .extra-section ul {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-left: 20px;
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Flex layout for the 3rd section only */
+    .flex-split {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .flex-split .text {
+        flex: 1 1 50%;
+        min-width: 300px;
+    }
+
+    .flex-split .image {
+        flex: 1 1 40%;
+        min-width: 250px;
+    }
+
+    .flex-split .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .flex-split {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .flex-split .text,
+        .flex-split .image {
+            flex: 1 1 100%;
+        }
+    }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    }
+
+    header {
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+    }
+
+    .logo-icon {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: monospace;
+    margin-right: 10px;
+    }
+
+    .logo-text {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: auto;
+    }
+
+    #menu-toggle {
+    display: none;
+    }
+
+    .menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    }
+
+    .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    }
+
+    .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+    color: #00c6b7;
+    border-bottom: 2px solid #00c6b7;
+    }
+
+    .dropdown {
+    position: relative;
+    }
+
+    .dropbtn {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    min-width: 180px;
+    }
+
+    .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    }
+
+    .dropdown-content a:hover {
+    background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        display: none;
+        border-top: 1px solid #ccc;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .nav-links a,
+    .dropbtn {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f9f9f9;
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .dropdown-content a {
+        padding: 10px 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-icon">GN</a>
+    <a href="index.html" class="logo-text">Greenix</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="bi bi-list"></i></label>
+
+    <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About us.html">About Us</a>
+    <div class="dropdown">
+        <a href="Main page.html" class="active" class="dropbtn">How Tech Helps <i class="bi bi-caret-down-fill"></i></a>
+        <div class="dropdown-content">
+        <a href="green-energy.html">Green Energy</a>
+        <a href="smart-living.html">Smart Living</a>
+        <a href="wastewise.html">Waste Wise</a>
+        </div>
+    </div>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>How <span class="highlight">Technology</span> Helps</h1>
+    <p>
+        Technology plays a powerful role in building a sustainable future.
+        From producing clean energy to creating smart homes and reducing waste,
+        it helps us live more efficiently while protecting our planet.
+    </p>
+</section>
+
+<section class="extra-section">
+    <h2>Innovative Green Technologies</h2>
+    <p>From biodegradable plastics to carbon capture systems, new technologies are revolutionizing how we protect the environment.</p>
+    <img src="Images/Green-Innovation-Concept.jpeg" alt="Green Innovations" />
+</section>
+
+<section class="extra-section">
+    <h2>Environmental Impact By Numbers</h2>
+    <p>Technology helps reduce global emissions and save energy. Check out some key statistics:</p>
+    <ul>
+        <li>One solar panel can save about 1000 kg of CO₂ per year.</li>
+        <li>Smart thermostats can reduce heating and cooling energy use by up to 15%.</li>
+        <li>AI-driven recycling can improve sorting efficiency by 60% or more.</li>
+    </ul>
+</section>
+
+<section class="tech-cards">
+    <div class="tech-card">
+        <img src="Images/clean-vs-green-energy.webp" alt="Green Energy" />
+        <h3>Clean Energy</h3>
+        <p>Explore how solar panels, wind turbines, and hydro power help us generate clean and renewable electricity.</p>
+        <a href="green-energy.html">Learn More</a>
+    </div>
+
+    <div class="tech-card">
+        <img src="Images/smart4.jpg" alt="Smart Living" />
+        <h3>Smart Living</h3>
+        <p>Discover how smart homes and devices can help us reduce energy use, save water, and live more comfortably.</p>
+        <a href="smart-living.html">Learn More</a>
+    </div>
+
+    <div class="tech-card">
+        <img src="Images/iStock-1253713039-1-1-1024x683.jpeg" alt="Waste Wise" />
+        <h3>Waste Wise</h3>
+        <p>Learn how technology helps us manage, sort, and recycle waste to keep our environment clean and healthy.</p>
+        <a href="wastewise.html">Learn More</a>
+    </div>
+</section>
+
+<section class="extra-section flex-split">
+    <div class="text">
+        <h2>Tips to Start Sustainable Living at Home</h2>
+        <p>
+            Starting a sustainable lifestyle at home doesn’t require big changes all at once.
+            Begin by switching to LED lighting and using energy-efficient appliances, which can significantly reduce electricity consumption.
+            Installing smart plugs and power strips allows you to cut down on phantom energy — the power used by devices even when they're off.
+        </p>
+        <p>
+            Another great step is collecting and reusing rainwater for gardening.
+            This not only conserves water but also helps reduce your water bills.
+            You can also monitor and reduce your daily energy usage by using smart meters or mobile apps that show real-time consumption.
+        </p>
+        <p>
+            All of these small steps build up to make your home more sustainable, eco-friendly, and cost-effective in the long run.
+        </p>
+    </div>
+    <div class="image">
+        <img src="Images/0_X5QIFUSM1050ddoo.jpg" alt="Sustainable Home" />
+    </div>
+</section>
+<footer>
+  <div class="aurora-container">
+    <div class="forest-chamber">
+      <h2 class="greenix-title">About Greenix</h2>
+      <p class="greenix-text">Greenix is a student-led project exploring technology for sustainable lifestyles. Our mission is to inspire and educate for a greener future.</p>
+    </div>
+
+       <div class="river-links">
+      <h2 class="greenix-title">Quick Links</h2>
+      <ul>
+        <li><a class="greenix-link" href="index.html">Home</a></li>
+        <li><a class="greenix-link" href="About us.html">About Us</a></li>
+        <li><a class="greenix-link" href="Main page.html">How Tech Helps</a></li>
+        <li><a class="greenix-link" href="contact.html">Contact</a></li>
+        <li><a class="greenix-link" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="meadow-resources">
+      <h2 class="greenix-title">Resources</h2>
+      <ul>
+        <li><a class="greenix-link" href="https://docs.google.com/document/d/1abcXYZ" target="_blank" rel="noopener noreferrer">References (Google Doc)</a></li>
+        <li class="greenix-text">Email: <a class="greenix-link" href="mailto:greenixproject@gmail.com">greenixproject@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="twilight-bottom">
+    &copy; 2025 Greenix. All rights reserved.
+  </div>
+
+  <style>
+    footer {
+      background-color: #000; /* true black */
+      color: white;
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aurora-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .forest-chamber,
+    .river-links,
+    .meadow-resources {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .greenix-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .greenix-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .greenix-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .twilight-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      border-top: 1px solid #ffffff;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .aurora-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .forest-chamber,
+      .river-links,
+      .meadow-resources {
+        min-width: 100%;
+      }
+    }
+  </style>
+</footer>
+</body>
+</html>

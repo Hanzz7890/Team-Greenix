@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green Energy | Greenix</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="icon" type="image/png" sizes="64x64" href="Images/dicky.png">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #222;
+}
+header {
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+}
+.logo-icon {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: monospace;
+    margin-right: 10px;
+}
+
+.logo-text {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: auto;
+}
+#menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+}
+.nav-links a.active,
+.nav-links a:hover {
+    color: #00c6b7;
+    border-bottom: 2px solid #00c6b7;
+}
+.dropdown {
+    position: relative;
+}
+.dropbtn {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    min-width: 180px;
+}
+.dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+}
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+main {
+    padding-top: 100px;
+    max-width: 1000px;
+    margin: auto;
+}
+h1 {
+    color: #00c6b7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.side-by-side img {
+    flex: 1 1 45%;
+    width: 100%;
+    border-radius: 12px;
+}
+.side-by-side div {
+    flex: 1 1 50%;
+}
+.stacked img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 20px;
+}
+h2 {
+    color: #00c6b7;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+}
+  /* Responsive styles */
+@media (max-width: 768px) {
+    .menu-icon {
+    display: block;
+    }
+    .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    display: none;
+    border-top: 1px solid #ccc;
+    }
+    #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+    }
+    .nav-links a,
+    .dropbtn {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    }
+    .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    width: 100%;
+    padding-left: 15px;
+    }
+    .dropdown-content a {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+    .side-by-side {
+    flex-direction: column;
+    }
+    .side-by-side img,
+    .side-by-side div {
+    flex: 1 1 100%;
+    }
+    main {
+    padding-top: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html" class="logo-icon">GN</a>
+<a href="index.html" class="logo-text">Greenix</a>
+<input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="menu-icon"><i class="bi bi-list"></i></label>
+<nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About us.html">About Us</a>
+    <div class="dropdown">
+    <a href="Main page.html" class="active" class="dropbtn">How Tech Helps <i class="bi bi-caret-down-fill"></i></a>
+    <div class="dropdown-content">
+        <a href="green-energy.html" >Green Energy</a>
+        <a href="smart-living.html">Smart Living</a>
+        <a href="wastewise.html" class="active">Waste Wise</a>
+    </div>
+    </div>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html">FAQ</a>
+</nav>
+</header>
+<main>
+<h1>Waste Wise</h1>
+<div class="side-by-side">
+    <img src="Images/bigstock-Recycling-Green-Recycle-Eco-S-258807076_1112x.webp" alt="Solar Panel Rooftop" />
+    <div>
+    <h2>What is Waste Wise?</h2>
+    <p>Green energy is a type of energy that comes from natural sources like sunlight, wind, water, and plants. Unlike fossil fuels such as coal and oil, green energy is clean and renewable, meaning it does not harm the environment and will not run out. It helps reduce air pollution and greenhouse gas emissions, which are major causes of climate change. Common examples of green energy include solar power, wind power, hydropower, geothermal energy, and biomass. By using green energy, we can protect the planet, improve public health, and create a more sustainable future for everyone.</p>
+    </div>
+</div>
+<div class="stacked">
+    <img src="Images/Media (1).jpg" alt="Wind Farm" />
+    <p>Waste Wise means making smart choices about how we handle waste by focusing on the 3Rs: Reduce, Reuse, and Recycle. This approach helps protect the environment by cutting down on the amount of trash we produce. When we reduce waste, we use fewer materials and avoid creating unnecessary garbage. Reusing items means giving them a second life instead of throwing them away, which helps save natural resources. Recycling involves turning old products into new ones, which uses less energy and reduces pollution compared to making things from raw materials. Being Waste Wise also means thinking carefully about what we buy and how we dispose of things. By following these practices, we can lower greenhouse gas emissions, keep our surroundings cleaner, save money, and build a more sustainable future for our planet.</p>
+</div>
+<div class="side-by-side">
+    <img src="Images/Media (2).jpg" alt="Hydropower Dam" />
+    <div>
+    <h2>Reusing Everyday Items</h2>
+    <p>Reusing Everyday Items is a simple but powerful way to reduce waste and protect the environment. Instead of throwing things away after one use, we can find new purposes for them. For example, glass jars can be used to store food or organize small items, and old clothes can be turned into cleaning rags or craft projects. Reusing helps conserve natural resources, reduce pollution, and save energy because it cuts down the need to produce new items. It also saves money and encourages creative thinking. By reusing everyday items, we take an important step toward living a more eco-friendly and sustainable lifestyle.</p>
+    </div>
+</div>
+<div class="stacked">
+    <img src="Images/Media (3).jpg" alt="Solar Community Project" />
+    <p>Being Waste Wise means making smart choices every day to reduce the amount of garbage we create. One of the most effective ways to do this is by reusing everyday items. Instead of throwing things away after just one use, we can find creative ways to use them again. For example, old clothes can become cleaning cloths, glass jars can be used for storage, and used paper can be turned into scrap notes or craft materials.
+Reusing helps conserve natural resources, reduce the energy used in manufacturing, and cut down pollution caused by producing and transporting new goods. It also means we send less waste to landfills, which helps keep our environment cleaner and safer.</p>
+</div>
+<div class="side-by-side">
+    <img src="Images/shutterstock_1432653041-resized-1-1024x600.jpg" alt="Benefits of Green Energy" />
+    <div>
+    <h2>Why Waste Wise Matters</h2>
+    <p>Being Waste Wise is important because it helps us take better care of our planet. Every day, people throw away tons of waste, much of which ends up in landfills, rivers, and oceans. This causes pollution, harms wildlife, and contributes to climate change. By being Waste Wise, reducing, reusing, and recycling, we can help reduce the amount of waste we create and make our environment cleaner and healthier.
+
+It also saves natural resources like water, trees, and minerals, which are limited and take a long time to replace. When we recycle or reuse materials instead of making new ones, we use less energy and release fewer harmful gases into the air. Being Waste Wise also saves money and encourages people to live more responsibly.
+
+Most importantly, it helps build a sustainable future. If we all make small changes—like using less plastic, sorting our trash, and reusing items—we can protect the planet for ourselves and for future generations. That’s why being Waste Wise really matters.</p>
+    </div>
+</div>
+<div class="stacked">
+    <img src="Images/articolo-ottobre_ok-2-1024x693.jpg" alt="renewable energy" />
+</div>
+</main>
+<footer>
+  <div class="aurora-container">
+    <div class="forest-chamber">
+      <h2 class="greenix-title">About Greenix</h2>
+      <p class="greenix-text">Greenix is a student-led project exploring technology for sustainable lifestyles. Our mission is to inspire and educate for a greener future.</p>
+    </div>
+
+        <div class="river-links">
+      <h2 class="greenix-title">Quick Links</h2>
+      <ul>
+        <li><a class="greenix-link" href="index.html">Home</a></li>
+        <li><a class="greenix-link" href="About us.html">About Us</a></li>
+        <li><a class="greenix-link" href="Main page.html">How Tech Helps</a></li>
+        <li><a class="greenix-link" href="contact.html">Contact</a></li>
+        <li><a class="greenix-link" href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="meadow-resources">
+      <h2 class="greenix-title">Resources</h2>
+      <ul>
+        <li><a class="greenix-link" href="https://docs.google.com/document/d/1abcXYZ" target="_blank" rel="noopener noreferrer">References (Google Doc)</a></li>
+        <li class="greenix-text">Email: <a class="greenix-link" href="mailto:greenixproject@gmail.com">greenixproject@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="twilight-bottom">
+    &copy; 2025 Greenix. All rights reserved.
+  </div>
+
+  <style>
+    footer {
+      background-color: #000; /* true black */
+      color: white;
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .aurora-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .forest-chamber,
+    .river-links,
+    .meadow-resources {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .greenix-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .greenix-text {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .greenix-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .twilight-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      border-top: 1px solid #ffffff;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .aurora-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .forest-chamber,
+      .river-links,
+      .meadow-resources {
+        min-width: 100%;
+      }
+    }
+  </style>
+</footer>
+</body>
+</html>
